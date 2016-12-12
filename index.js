@@ -19,7 +19,7 @@ server.on('error', function (err) {
   console.log(err);
 });
 
-server.listen(process.env.OPENSHIFT_NODEJS_PORT, function () {
+server.listen(8080, function () {
     address = server.address();
     console.log('opened server on %j', address);
 });
