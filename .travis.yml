@@ -1,0 +1,13 @@
+sudo: required
+
+language: nodejs
+
+services:
+  - docker
+
+before_install:
+  - docker build -t httptest .
+  - docker run -d -p 127.0.0.1:80:6001 httptest /bin/sh -c "npm start"
+
+script:
+  - curl localhost
